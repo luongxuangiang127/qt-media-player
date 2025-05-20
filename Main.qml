@@ -302,23 +302,60 @@ ApplicationWindow {
                             anchors.rightMargin: 50
                             spacing:0
 
+                            //nút suffle
                             Rectangle {
                                 Layout.preferredWidth: parent.width * 0.15
                                 Layout.fillHeight: true
                                 color: "transparent"
 
-                                Image {
-                                    id: imgShuffle
-                                    source: mouseAreaShuffle.containsMouse ? "qrc:/Image/shuffle-1.png" : "qrc:/Image/shuffle.png"
-                                    anchors.centerIn: parent
-                                    anchors.fill: parent
-                                    fillMode: Image.PreserveAspectFit
-                                }
+                                Rectangle {
+                                    width: parent.width
+                                    height: parent.height
+                                    color: "transparent"
 
-                                MouseArea {
-                                    id: mouseAreaShuffle
-                                    anchors.fill: parent
-                                    hoverEnabled: true
+                                    Image {
+                                        id: mainShuffleImage
+                                        anchors.centerIn: parent
+
+                                        source: "qrc:/Image/shuffle.png"
+                                        fillMode: Image.PreserveAspectFit
+                                        width: parent.width
+                                        height: width
+                                    }
+
+                                    MouseArea {
+                                        anchors.fill: mainShuffleImage
+                                        hoverEnabled: true
+
+                                        property bool toggled: false
+                                        property string normalSource: "qrc:/Image/shuffle.png"
+                                        property string toggledSource: "qrc:/Image/shuffle-1.png"
+
+                                        onEntered: {
+                                            if (toggled) {
+                                                mainShuffleImage.source = normalSource
+                                            } else {
+                                                mainShuffleImage.source = toggledSource
+                                            }
+                                        }
+
+                                        onExited: {
+                                            if (toggled) {
+                                                mainShuffleImage.source = toggledSource
+                                            } else {
+                                                mainShuffleImage.source = normalSource
+                                            }
+                                        }
+
+                                        onClicked: {
+                                            toggled = !toggled
+                                            if (toggled) {
+                                                mainShuffleImage.source = toggledSource
+                                            } else {
+                                                mainShuffleImage.source = normalSource
+                                            }
+                                        }
+                                    }
                                 }
                             }
 
@@ -436,42 +473,58 @@ ApplicationWindow {
                                 Layout.fillHeight: true
                                 color: "transparent"
 
+                                // Bên trong đây mình nhúng đoạn ApplicationWindow (đã lược bớt thành Rectangle chứa Image và MouseArea)
+                                Rectangle {
+                                    width: parent.width
+                                    height: parent.height
+                                    color: "transparent"
 
-
-                                Image {
-                                    id: imgRepeat
-                                    source: (mouseAreaRepeat.containsMouse || isClickedRepeat) ? "qrc:/Image/repeat1_hold.png" : "qrc:/Image/repeat.png"
-                                    anchors.centerIn: parent
-                                    anchors.fill: parent
-                                    fillMode: Image.PreserveAspectFit
-                                }
-
-                                MouseArea {
-                                    id: mouseAreaRepeat
-                                    anchors.fill: parent
-                                    hoverEnabled: true
-
-                                    onPressed: {
-                                        isPressedRepeat = true
+                                    Image {
+                                        id: mainRepeatImage
+                                        anchors.centerIn: parent
+                                        source: "qrc:/Image/repeat.png"
+                                        fillMode: Image.PreserveAspectFit
+                                        width: parent.width
+                                        height: width
                                     }
 
-                                    onReleased: {
-                                        if (containsMouse) {
-                                            // Toggle trạng thái khi click trong vùng
-                                            isClickedRepeat = !isClickedRepeat
-                                        }
-                                        isPressedRepeat = false
-                                    }
+                                    MouseArea {
+                                        anchors.fill: mainRepeatImage
+                                        hoverEnabled: true
 
-                                    onExited: {
-                                        if (isPressedRepeat) {
-                                            // Nếu đang nhấn và di chuột ra ngoài thì vẫn giữ trạng thái click (bật repeat)
-                                            isClickedRepeat = true
+                                        property bool toggled: false
+                                        property string normalSource: "qrc:/Image/repeat.png"
+                                        property string toggledSource: "qrc:/Image/repeat1_hold.png"
+
+                                        onEntered: {
+                                            if (toggled) {
+                                                mainRepeatImage.source = normalSource
+                                            } else {
+                                                mainRepeatImage.source = toggledSource
+                                            }
                                         }
-                                        isPressedRepeat = false
+
+                                        onExited: {
+                                            if (toggled) {
+                                                mainRepeatImage.source = toggledSource
+                                            } else {
+                                                mainRepeatImage.source = normalSource
+                                            }
+                                        }
+
+                                        onClicked: {
+                                            toggled = !toggled
+                                            if (toggled) {
+                                                mainRepeatImage.source = toggledSource
+                                            } else {
+                                                mainRepeatImage.source = normalSource
+                                            }
+                                        }
                                     }
                                 }
                             }
+                            //xong repeat button
+
 
 
                         }
