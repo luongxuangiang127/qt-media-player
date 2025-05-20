@@ -303,61 +303,15 @@ ApplicationWindow {
                             spacing:0
 
                             //nút suffle
-                            Rectangle {
+                            CommonButtons {
                                 Layout.preferredWidth: parent.width * 0.15
                                 Layout.fillHeight: true
-                                color: "transparent"
-
-                                Rectangle {
-                                    width: parent.width
-                                    height: parent.height
-                                    color: "transparent"
-
-                                    Image {
-                                        id: mainShuffleImage
-                                        anchors.centerIn: parent
-
-                                        source: "qrc:/Image/shuffle.png"
-                                        fillMode: Image.PreserveAspectFit
-                                        width: parent.width
-                                        height: width
-                                    }
-
-                                    MouseArea {
-                                        anchors.fill: mainShuffleImage
-                                        hoverEnabled: true
-
-                                        property bool toggled: false
-                                        property string normalSource: "qrc:/Image/shuffle.png"
-                                        property string toggledSource: "qrc:/Image/shuffle-1.png"
-
-                                        onEntered: {
-                                            if (toggled) {
-                                                mainShuffleImage.source = normalSource
-                                            } else {
-                                                mainShuffleImage.source = toggledSource
-                                            }
-                                        }
-
-                                        onExited: {
-                                            if (toggled) {
-                                                mainShuffleImage.source = toggledSource
-                                            } else {
-                                                mainShuffleImage.source = normalSource
-                                            }
-                                        }
-
-                                        onClicked: {
-                                            toggled = !toggled
-                                            if (toggled) {
-                                                mainShuffleImage.source = toggledSource
-                                            } else {
-                                                mainShuffleImage.source = normalSource
-                                            }
-                                        }
-                                    }
-                                }
+                                buttonWidth: 50
+                                normalSource: "qrc:/Image/shuffle.png"
+                                toggledSource: "qrc:/Image/shuffle-1.png"
                             }
+
+                            //Nút prev
 
 
 
@@ -468,60 +422,12 @@ ApplicationWindow {
                             }
 
                             //repeat button
-                            Rectangle {
+                            CommonButtons {
                                 Layout.preferredWidth: parent.width * 0.15
                                 Layout.fillHeight: true
-                                color: "transparent"
-
-                                // Bên trong đây mình nhúng đoạn ApplicationWindow (đã lược bớt thành Rectangle chứa Image và MouseArea)
-                                Rectangle {
-                                    width: parent.width
-                                    height: parent.height
-                                    color: "transparent"
-
-                                    Image {
-                                        id: mainRepeatImage
-                                        anchors.centerIn: parent
-                                        source: "qrc:/Image/repeat.png"
-                                        fillMode: Image.PreserveAspectFit
-                                        width: parent.width
-                                        height: width
-                                    }
-
-                                    MouseArea {
-                                        anchors.fill: mainRepeatImage
-                                        hoverEnabled: true
-
-                                        property bool toggled: false
-                                        property string normalSource: "qrc:/Image/repeat.png"
-                                        property string toggledSource: "qrc:/Image/repeat1_hold.png"
-
-                                        onEntered: {
-                                            if (toggled) {
-                                                mainRepeatImage.source = normalSource
-                                            } else {
-                                                mainRepeatImage.source = toggledSource
-                                            }
-                                        }
-
-                                        onExited: {
-                                            if (toggled) {
-                                                mainRepeatImage.source = toggledSource
-                                            } else {
-                                                mainRepeatImage.source = normalSource
-                                            }
-                                        }
-
-                                        onClicked: {
-                                            toggled = !toggled
-                                            if (toggled) {
-                                                mainRepeatImage.source = toggledSource
-                                            } else {
-                                                mainRepeatImage.source = normalSource
-                                            }
-                                        }
-                                    }
-                                }
+                                buttonWidth: 50
+                                normalSource: "qrc:/Image/repeat.png"
+                                toggledSource: "qrc:/Image/repeat1_hold.png"
                             }
                             //xong repeat button
 

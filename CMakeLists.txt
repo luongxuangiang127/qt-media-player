@@ -20,6 +20,7 @@ qt_add_qml_module(appqt-media-player
         RESOURCES resource.qrc
         RESOURCES README.md
         RESOURCES .gitignore
+        QML_FILES CommonButtons.qml
 )
 
 qt_add_resources(appqt-media-player "Resource"
