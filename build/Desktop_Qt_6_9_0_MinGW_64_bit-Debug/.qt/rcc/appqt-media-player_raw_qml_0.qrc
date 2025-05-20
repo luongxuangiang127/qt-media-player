@@ -1,0 +1,9 @@
+<RCC>
+  <qresource prefix="/qt/qml/qt-media-player/">
+    <file alias="Main.qml">D:/Funix/QtQML/Asms/ForGitHub/qt-media-player/qt-media-player/Main.qml</file>
+    <file alias="resource.qrc">D:/Funix/QtQML/Asms/ForGitHub/qt-media-player/qt-media-player/resource.qrc</file>
+    <file alias="README.md">D:/Funix/QtQML/Asms/ForGitHub/qt-media-player/qt-media-player/README.md</file>
+    <file alias=".gitignore">D:/Funix/QtQML/Asms/ForGitHub/qt-media-player/qt-media-player/.gitignore</file>
+  </qresource>
+</RCC>
+

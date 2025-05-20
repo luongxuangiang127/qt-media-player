@@ -1,0 +1,5 @@
+module qt-media-player
+typeinfo appqt-media-player.qmltypes
+prefer :/qt/qml/qt-media-player/
+Main 1.0 Main.qml
+

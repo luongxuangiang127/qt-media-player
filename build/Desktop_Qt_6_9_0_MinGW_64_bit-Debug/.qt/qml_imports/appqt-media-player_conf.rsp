@@ -1,0 +1,15 @@
+-rootPath
+D:/Funix/QtQML/Asms/ForGitHub/qt-media-player/qt-media-player
+-cmake-output
+-output-file
+D:/Funix/QtQML/Asms/ForGitHub/qt-media-player/qt-media-player/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/.qt/qml_imports/appqt-media-player_conf.cmake
+-importPath
+D:/Funix/QtQML/Asms/ForGitHub/qt-media-player/qt-media-player/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/qt-media-player
+-importPath
+D:/Funix/QtQML/Asms/ForGitHub/qt-media-player/qt-media-player/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug
+-importPath
+C:/Qt/6.9.0/mingw_64/qml
+-qrcFiles
+D:/Funix/QtQML/Asms/ForGitHub/qt-media-player/qt-media-player/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/.qt/rcc/qmake_qt-media-player.qrc
+D:/Funix/QtQML/Asms/ForGitHub/qt-media-player/qt-media-player/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/.qt/rcc/appqt-media-player_raw_qml_0.qrc
+D:/Funix/QtQML/Asms/ForGitHub/qt-media-player/qt-media-player/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/.qt/rcc/Resource.qrc
